@@ -7,67 +7,102 @@ module.exports = function(grunt) {
 		
 		// CONFIGURE TASKS
 		concat: {
-			appjs: {
-				src: ['vendor/js/jquery.min.js', 'vendor/js/underscore.min.js', 'vendor/js/bootstrap.min.js', 'vendor/js/angular.min.js', 'vendor/js/modernizr.custom.js',/*'vendor/js/angular-fire.min.js',*/ 'src/js/**/*.js'],
+			sourcejs: {
+				src: ['dev/source/js/**/*.js'],
 				dest: 'dist/js/app.js'
 			},
-			themejs: {
-				src: ['theme/js/**/*.js'],
-				dest: 'dist/js/theme.js'
+			vendorjs: {
+				src: ['dev/vendor/js/jquery.min.js', 'dev/vendor/js/underscore.min.js', 'dev/vendor/js/bootstrap.min.js', 'dev/vendor/js/angular.min.js'],
+				dest: 'dist/js/vendor.min.js'
 			},
-			appcss: {
-				src: ['vendor/css/bootstrap.min.css', 'vendor/css/bootstrap-responsive.min.css', 'src/css/**/*.css'],
-				dest: 'dist/css/app.css'				
-			},
-			themecss: {
-				src: ['theme/css/**/*.css'],
-				dest: 'dist/css/theme.css'
+			sourcecss: {
+				src: ['dev/source/css/**/*.css'],
+				dest: 'dist/css/app.css'
+			},			
+			vendorcss: {
+				src: ['dev/vendor/css/bootstrap.min.css', 'dev/vendor/css/bootstrap-responsive.min.css'],
+				dest: 'dist/css/vendor.min.css'				
 			}
 		},
 
-		indexpage: {
-			template: 'src/index.html',
-			dist: {
-				dest: 'dist/index.html',
-				context: {
-					appjs: 'js/app.min.js',
-					appcss: 'css/app.css',
-					themejs: 'js/theme.js',
-					themecss: 'css/theme.css'
-				}
-			}
+		uglify: {
+    		options: {
+    			banner: '/* 8-Bit Mellow Uberjuju application min.js file | <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+  			},
+    		sourcejs: {
+      			files: {
+        			'dist/js/app.min.js': ['dist/js/app.js']
+      			}
+    		}
+  		},
+
+  		cssmin: {
+  			add_banner: {
+    			options: {
+      				banner: '/* 8-Bit Mellow Uberjuju application min.css file | <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+    			},
+    			files: {
+      				'dist/css/app.css': ['dist/css/app.css']
+    			}
+  			}, 			
+  			minify: {
+    			expand: true,
+    			src: ['dist/css/app.css'],
+    			dest: 'dist/css/',
+    			ext: '.min.css'
+  			}
 		},
+
 
 		copy: {
-			main: {
-				files: [{expand: true, src: ['theme/images/**'], dest: 'dist/images/'}]
-			}
+			index: {
+				files: [{expand: true, src: ['dev/index.html'], dest: 'dist/index.html'}]
+			}.
+			images: {
+				files: [{expand: true, src: ['dev/source/img/**'], dest: 'dist/img/'}]
+			},
+			templates: {
+				files: [{expand: true, src: ['dev/source/tmpl/**'], dest: 'dist/tmpl/'}]
+			},
+
 		},
 
 		watch: {
-			js: {
-				files: ['<%= concat.appjs.src %>'],
-				tasks: ['concat:js']
+			index: {
+				files: ['<%= copy.index.src %>'],
+				tasks: ['copy:index']
 			},
-			css: {
-				files: ['<%= concat.appcss.src %>'],
-				tasks: ['concat:css']				
+			images: {
+				files: ['<%= copy.images.src %>'],
+				tasks: ['copy:images']
 			},
-			indexpage: {
-				files: ['<%= indexpage.template %>'],
-				tasks: ['indexpage:dist']
+			templates: {
+				files: ['<%= copy.templates.src %>'],
+				tasks: ['copy:templates']
+			},			
+			sourcejs: {
+				files: ['<%= concat.sourcejs.src %>'],
+				tasks: ['concat:sourcejs']
+			},
+			vendorjs: {
+				files: ['<%= concat.vendorjs.src %>'],
+				tasks: ['concat:vendorjs']
+			},
+			sourcecss: {
+				files: ['<%= concat.sourcecss.src %>'],
+				tasks: ['concat:sourcecss']
+			},						
+			vendorcss: {
+				files: ['<%= concat.vendorcss.src %>'],
+				tasks: ['concat:vendorcss']				
 			},
 			dist: {
-				files: ['dist/css/app.css', 'dist/js/app.min.js', 'dist/css/theme.css', 'dist/js/theme.min.js', 'dist/index.html']
+				files: ['dist/index.html','dist/js/**','dist/css/**','dist/tmpl/**']
 			},
 			options: {
 					livereload: true,
 			}
 		}
-
-		
-
-
 	});
 
 	// LOADED CORE GRUNT-CONTRIB TASKS FROM NPM MODULE
@@ -82,10 +117,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-watch");
 
 	// LOAD A CUSTOM TASK
-	grunt.loadTasks("tasks");
+	//grunt.loadTasks("tasks");
 
 
 	// SETUP THE WORKFLOW
-	grunt.registerTask("default", ["concat", "indexpage", "watch"]);
+	grunt.registerTask("default", ["concat", "uglify", "cssmin","copy", "watch"]);
 
 };
