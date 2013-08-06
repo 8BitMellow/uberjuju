@@ -6,32 +6,38 @@ Uberjuju is a core repository used by 8-Bit Mellow that provides a basic develop
 
 <h3>Basic File Structure</h3>
 
-+ app
-  + dist (production distribution)
-    - index.html (main index.html file)
-    + source (application source files)
-      + css
-      + images
-      + js
-      + templates
-    + vendor  (third party files)
-      + css
-      + images
-      + js
-  + tasks (grunt tasks)
-  + grunt (grunt local installation)
-  + node_modules (local npm plugin installations)
-  + dev (development)
-    - index.html (main index.html file)
-      + source (application source files)
-        + css
-        + images
-        + js
-        + templates
-      + vendor  (third party files)
-        + css
-        + images
-        + js
++ app (directory - application)
+  
+  + dist (directory - production distribution)
+    - index.html (file - main index.html)
+    + source (directory - application source)
+      + css (directory - application stylesheets)
+      + images (directory - application images)
+      + js (directory - application javascripts)
+      + templates (directory - application js templates)
+    + vendor  (directory - third party source)
+      + css (directory - third party stylesheets)
+      + images (directory - third party images)
+      + js (directory - third party javascripts)
+  
+  + tasks (directory - grunt tasks)
+  
+  + grunt (directory - grunt local installation)
+  
+  + node_modules (folder - local npm plugin installations)
+  
+  + dev (directory - development distribution)
+    - index.html (file - main index.html dev)
+      + source (directory - application source)
+        + css (directory - application stylesheets)
+        + images (directory - application images)
+        + js (directory - application javascripts)
+        + templates (directory - application js templates)
+      + vendor  (directory - third party files)
+        + css (directory - third party stylesheets)
+        + images (directory - third party images)
+        + js (directory - third party javascripts)
+  
   - Gruntfile.js
   - package.json
 
