@@ -12,12 +12,12 @@ Uberjuju is a core repository used by 8-Bit Mellow that provides a basic develop
     - <b>index.html</b> <i>(file - main index.html)</i>
     + <b>source</b> <i>(directory - application source)</i>
       + <b>css</b> <i>(directory - application stylesheets)</i>
-      + <b>images</b> <i>(directory - application images)</i>
+      + <b>img</b> <i>(directory - application images)</i>
       + <b>js</b> <i>(directory - application javascripts)</i>
-      + <b>templates</b> <i>(directory - application js templates)</i>
+      + <b>tmpl</b> <i>(directory - application js templates)</i>
     + <b>vendor</b>  <i>(directory - third party source)</i>
       + <b>css</b> <i>(directory - third party stylesheets)</i>
-      + <b>images</b> <i>(directory - third party images)</i>
+      + <b>img</b> <i>(directory - third party images)</i>
       + <b>js</b> <i>(directory - third party javascripts)</i>
   
   + <b>tasks</b> <i>(directory - grunt tasks)</i>
@@ -30,12 +30,12 @@ Uberjuju is a core repository used by 8-Bit Mellow that provides a basic develop
     - <b>index.html</b> <i>(file - main index.html dev)</i>
       + <b>source</b> <i>(directory - application source)</i>
         + <b>css</b> <i>(directory - application stylesheets)</i>
-        + <b>images</b> <i>(directory - application images)</i>
+        + <b>img</b> <i>(directory - application images)</i>
         + <b>js</b> <i>(directory - application javascripts)</i>
-        + <b>templates</b> <i>(directory - application js templates)</i>
+        + <b>tmpl</b> <i>(directory - application js templates)</i>
       + <b>vendor</b>  <i>(directory - third party files)</i>
         + <b>css</b> <i>(directory - third party stylesheets)</i>
-        + <b>images</b> <i>(directory - third party images)</i>
+        + <b>img</b> <i>(directory - third party images)</i>
         + <b>js</b> <i>(directory - third party javascripts)</i>
   
   - <b>Gruntfile.js</b>
