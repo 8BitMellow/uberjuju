@@ -4,11 +4,11 @@ Uberjuju
 <h3>What is Uberjuju?</h3>
 Uberjuju is a core repository used by 8-Bit Mellow that provides a basic developer workflow using node.js, npm (node package manager), and grunt.js that we use to build Javascript Applications. 
 
-<h3>Basic File Structure</h3>
+<h3>Basic Directory and File Structure</h3>
 
-+ app (directory - application)
++ <b>app</b> <i>(directory - application)</i>
   
-  + dist (directory - production distribution)
+  + <b>dist</b> (directory - production distribution)
     - index.html (file - main index.html)
     + source (directory - application source)
       + css (directory - application stylesheets)
