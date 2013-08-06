@@ -12,7 +12,6 @@ Uberjuju is a core repository used by 8-Bit Mellow that provides a basic develop
 <h3>Install Instructions</h3>
 
 STEP 1 - INSTALL NODE
---------- 
 
 1. GO TO URL http://nodejs.org/
 2. DOWNLOAD CURRENT VERSION (v.0.10.15 at time of this update 8/1/13)
@@ -26,7 +25,6 @@ NOTE:
 
 
 STEP 2 - CONFIRM INSTALLATION
----------
 
 1. OPEN NEW TERMINAL WINDOW
 2. USE THE FOLLOWING COMMANDS TO CONFIRM VERSIONS OF NODE AND NPM
@@ -38,7 +36,6 @@ npm -v [enter]
 1.3.5
 
 STEP 3 - INSTALL GRUNT COMMAND LINE INTERFACE
----------
 
 sudo npm install grunt-cli -g [enter]
 Password: <Password> [enter]
