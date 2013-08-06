@@ -73,11 +73,19 @@ v.0.10.15
 npm -v [enter]
 1.3.5
 
-<h4>STEP 3 - INSTALL GRUNT COMMAND LINE INTERFACE</h4>
+
+<h4>STEP 3 - INSTALL GRUNT GLOBAL COMMAND LINE INTERFACE</h4>
 
 sudo npm install grunt-cli -g [enter]
 Password: <Password> [enter]
 
+
+<h4>STEP 4 - INSTALL LOCAL GRUNT</h4>
+
+1. OPEN NEW TERMINAL WINDOW
+2. USE THE FOLLOWING COMMANDS TO INSTALL LOCAL GRUNT AND CORE GRUNT-CONTRIB PLUGINS
+npm install grunt --save  [enter]
+npm install grunt-contrib --save [enter]
 
 
 ==========
