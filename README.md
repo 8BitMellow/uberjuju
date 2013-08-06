@@ -2,17 +2,46 @@ Uberjuju
 ========
 
 <h3>What is Uberjuju?</h3>
-Uberjuju is a core repository for starters that uses grunt js and a basic file directory structure to automate common tasks and get you quickly up and running developing JS Applications.
+Uberjuju is a core repository used by 8-Bit Mellow that provides a basic developer workflow using node.js, npm (node package manager), and grunt.js that we use to build Javascript Applications. 
 
 <h3>Requirements:</h3>
  - Node
  - npm (node package manager)
  - Grunt.js
 
-<h3>Install and Configu Instructions</h3>
+<h3>Install Instructions</h3>
+
+STEP 1 - INSTALL NODE
+--------- 
+
+1. GO TO URL http://nodejs.org/
+2. DOWNLOAD CURRENT VERSION (v.0.10.15 at time of this update 8/1/13)
+3. OPEN node-v0.10.15.pkg TO LAUNCH NODE INSTALLER
+4. WALK THROUGH NODE & NPM INSTALLER
+5. INSTALLATION COMPLETED
+
+NOTE:
+- Node was installed at /usr/local/bin/node
+- npm was installed at /usr/local/bin/npm
 
 
+STEP 2 - CONFIRM INSTALLATION
+---------
 
+1. OPEN NEW TERMINAL WINDOW
+2. USE THE FOLLOWING COMMANDS TO CONFIRM VERSIONS OF NODE AND NPM
+
+node -v [enter]
+v.0.10.15
+
+npm -v [enter]
+1.3.5
+
+STEP 3 - INSTALL GRUNT COMMAND LINE INTERFACE
+---------
+
+sudo npm install grunt-cli -g [enter]
+Password: <Password> [enter]
 
 
 
