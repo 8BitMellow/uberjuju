@@ -62,27 +62,34 @@ NOTE:
 1. OPEN NEW TERMINAL WINDOW
 2. USE THE FOLLOWING COMMANDS TO CONFIRM VERSIONS OF NODE AND NPM
 
-node -v [enter]
-v.0.10.15
+	- node -v [enter]
+	v.0.10.15
 
-npm -v [enter]
-1.3.5
+	- npm -v [enter]
+	1.3.5
 
 
 <h4>STEP 3 - INSTALL GRUNT GLOBAL COMMAND LINE INTERFACE</h4>
 
-sudo npm install grunt-cli -g [enter]
-Password: <Password> [enter]
+1. USE THE FOLLOWING COMMANDS TO INSTALL GRUNT CLI GLOBALLY
+
+	- sudo npm install grunt-cli -g [enter]
+	- Password: <Password> [enter]
 
 
 <h4>STEP 4 - INSTALL LOCAL GRUNT</h4>
 
 1. OPEN NEW TERMINAL WINDOW
-2. USE THE FOLLOWING COMMANDS TO INSTALL LOCAL GRUNT AND CORE GRUNT-CONTRIB PLUGINS
+2. CHANGE DIRECTORY TO BASE APPLICATION (ROOT) DIRECTORY
+3. USE THE FOLLOWING COMMANDS TO INSTALL LOCAL GRUNT AND CORE GRUNT-CONTRIB PLUGINS
 
-npm install grunt --save  [enter]
-npm install grunt-contrib --save [enter]
-
+	- npm install grunt --save  [enter]
+	- npm install grunt-contrib-concat --save [enter]
+	- npm install grunt-contrib-copy --save [enter]
+	- npm install grunt-contrib-cssmin --save [enter]
+	- npm install grunt-contrib-uglify --save [enter]
+	- npm install grunt-contrib-watch --save [enter]
+    
 
 ==========
 <h3>About Us</h3>
