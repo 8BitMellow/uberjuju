@@ -8,41 +8,38 @@ Uberjuju is a core repository used by 8-Bit Mellow that provides a basic develop
 
 + <b>app</b> <i>(directory - application)</i>
   
-  + <b>dist</b> (directory - production distribution)
-    - index.html (file - main index.html)
-    + source (directory - application source)
-      + css (directory - application stylesheets)
-      + images (directory - application images)
-      + js (directory - application javascripts)
-      + templates (directory - application js templates)
-    + vendor  (directory - third party source)
-      + css (directory - third party stylesheets)
-      + images (directory - third party images)
-      + js (directory - third party javascripts)
+  + <b>dist</b> <i>(directory - production distribution)</i>
+    - <b>index.html</b> <i>(file - main index.html)</i>
+    + <b>source</b> <i>(directory - application source)</i>
+      + <b>css</b> <i>(directory - application stylesheets)</i>
+      + <b>images</b> <i>(directory - application images)</i>
+      + <b>js</b> <i>(directory - application javascripts)</i>
+      + <b>templates</b> <i>(directory - application js templates)</i>
+    + <b>vendor</b>  <i>(directory - third party source)</i>
+      + <b>css</b> <i>(directory - third party stylesheets)</i>
+      + <b>images</b> <i>(directory - third party images)</i>
+      + <b>js</b> <i>(directory - third party javascripts)</i>
   
-  + tasks (directory - grunt tasks)
+  + <b>tasks</b> <i>(directory - grunt tasks)</i>
   
-  + grunt (directory - grunt local installation)
+  + <b>grunt</b> <i>(directory - grunt local installation)</i>
   
-  + node_modules (folder - local npm plugin installations)
+  + <b>node_modules</b> <i>(folder - local npm plugin installations)</i>
   
-  + dev (directory - development distribution)
-    - index.html (file - main index.html dev)
-      + source (directory - application source)
-        + css (directory - application stylesheets)
-        + images (directory - application images)
-        + js (directory - application javascripts)
-        + templates (directory - application js templates)
-      + vendor  (directory - third party files)
-        + css (directory - third party stylesheets)
-        + images (directory - third party images)
-        + js (directory - third party javascripts)
+  + <b>dev</b> <i>(directory - development distribution)</i>
+    - <b>index.html</b> <i>(file - main index.html dev)</i>
+      + <b>source</b> <i>(directory - application source)</i>
+        + <b>css</b> <i>(directory - application stylesheets)</i>
+        + <b>images</b> <i>(directory - application images)</i>
+        + <b>js</b> <i>(directory - application javascripts)</i>
+        + <b>templates</b> <i>(directory - application js templates)</i>
+      + <b>vendor</b>  <i>(directory - third party files)</i>
+        + <b>css</b> <i>(directory - third party stylesheets)</i>
+        + <b>images</b> <i>(directory - third party images)</i>
+        + <b>js</b> <i>(directory - third party javascripts)</i>
   
-  - Gruntfile.js
-  - package.json
-
-
-
+  - <b>Gruntfile.js</b>
+  - <b>package.json</b>
 
 
 <h3>Requirements:</h3>
