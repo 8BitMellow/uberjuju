@@ -44,13 +44,14 @@ module.exports = function(grunt) {
     			files: {
       				'dist/css/app.css': ['dist/css/app.css']
     			}
-  			},/*	
+  			},	
   			minify: {
     			expand: true,
-    			src: ['dist/css/app.css'],
+    			cwd: 'dist/css/',
+    			src: ['app.css'],
     			dest: 'dist/css/',
     			ext: '.min.css'
-  			}*/
+  			}
 		},
 
 
@@ -73,27 +74,27 @@ module.exports = function(grunt) {
 				tasks: ['copy:index']
 			},
 			images: {
-				files: ['dev/source/img/**'],
+				files: ['dev/source/img/**/*'],
 				tasks: ['copy:images']
 			},
 			templates: {
-				files: ['dev/source/tmpl/**'],
+				files: ['dev/source/tmpl/**/*'],
 				tasks: ['copy:templates']
 			},			
 			sourcejs: {
-				files: ['dev/source/js/**'],
+				files: ['dev/source/js/**/*'],
 				tasks: ['concat:sourcejs']
 			},
 			vendorjs: {
-				files: ['dev/vendor/img/**'],
+				files: ['dev/vendor/img/**/*'],
 				tasks: ['concat:vendorjs']
 			},
 			sourcecss: {
-				files: ['dev/source/css/**'],
-				tasks: ['concat:sourcecss']
+				files: ['dev/source/css/**/*'],
+				tasks: ['concat:sourcecss', 'cssmin:minify']
 			},						
 			vendorcss: {
-				files: ['dev/vendor/css/**'],
+				files: ['dev/vendor/css/**/*'],
 				tasks: ['concat:vendorcss']				
 			},
 			options: {
