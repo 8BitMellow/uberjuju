@@ -84,6 +84,7 @@ Password: <Password> [enter]
 
 1. OPEN NEW TERMINAL WINDOW
 2. USE THE FOLLOWING COMMANDS TO INSTALL LOCAL GRUNT AND CORE GRUNT-CONTRIB PLUGINS
+
 npm install grunt --save  [enter]
 npm install grunt-contrib --save [enter]
 
