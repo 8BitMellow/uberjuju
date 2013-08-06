@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 
 		uglify: {
     		options: {
-    			banner: '/* 8-Bit Mellow Uberjuju application min.js file | <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+    			banner: '/* 8-Bit Mellow Uberjuju application min.js file | <%= grunt.template.today("mm-dd-yyyy") %> */\n'
   			},
     		sourcejs: {
       			files: {
@@ -39,65 +39,62 @@ module.exports = function(grunt) {
   		cssmin: {
   			add_banner: {
     			options: {
-      				banner: '/* 8-Bit Mellow Uberjuju application min.css file | <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+      				banner: '/* 8-Bit Mellow Uberjuju application min.css file | <%= grunt.template.today("mm-dd-yyyy") %> */\n'
     			},
     			files: {
       				'dist/css/app.css': ['dist/css/app.css']
     			}
-  			}, 			
+  			},/*	
   			minify: {
     			expand: true,
     			src: ['dist/css/app.css'],
     			dest: 'dist/css/',
     			ext: '.min.css'
-  			}
+  			}*/
 		},
 
 
 		copy: {
 			index: {
-				files: [{expand: true, src: ['dev/index.html'], dest: 'dist/index.html'}]
-			}.
+				files: [{expand: true, cwd:'dev/source/', src: ['index.html'], dest: 'dist/'}]
+			},
 			images: {
-				files: [{expand: true, src: ['dev/source/img/**'], dest: 'dist/img/'}]
-			},
+				files: [{expand: true, cwd:'dev/source/img/', src: ['**'], dest: 'dist/img/'}]
+			},			
 			templates: {
-				files: [{expand: true, src: ['dev/source/tmpl/**'], dest: 'dist/tmpl/'}]
-			},
+				files: [{expand: true, cwd:'dev/source/tmpl/', src: ['**'], dest: 'dist/tmpl/'}]
+			}
 
 		},
 
 		watch: {
 			index: {
-				files: ['<%= copy.index.src %>'],
+				files: ['dev/index.html'],
 				tasks: ['copy:index']
 			},
 			images: {
-				files: ['<%= copy.images.src %>'],
+				files: ['dev/source/img/**'],
 				tasks: ['copy:images']
 			},
 			templates: {
-				files: ['<%= copy.templates.src %>'],
+				files: ['dev/source/tmpl/**'],
 				tasks: ['copy:templates']
 			},			
 			sourcejs: {
-				files: ['<%= concat.sourcejs.src %>'],
+				files: ['dev/source/js/**'],
 				tasks: ['concat:sourcejs']
 			},
 			vendorjs: {
-				files: ['<%= concat.vendorjs.src %>'],
+				files: ['dev/vendor/img/**'],
 				tasks: ['concat:vendorjs']
 			},
 			sourcecss: {
-				files: ['<%= concat.sourcecss.src %>'],
+				files: ['dev/source/css/**'],
 				tasks: ['concat:sourcecss']
 			},						
 			vendorcss: {
-				files: ['<%= concat.vendorcss.src %>'],
+				files: ['dev/vendor/css/**'],
 				tasks: ['concat:vendorcss']				
-			},
-			dist: {
-				files: ['dist/index.html','dist/js/**','dist/css/**','dist/tmpl/**']
 			},
 			options: {
 					livereload: true,
@@ -121,6 +118,6 @@ module.exports = function(grunt) {
 
 
 	// SETUP THE WORKFLOW
-	grunt.registerTask("default", ["concat", "uglify", "cssmin","copy", "watch"]);
+	grunt.registerTask("default", ["concat", "uglify", "cssmin", "copy", "watch"]);
 
 };
